@@ -7,6 +7,13 @@ import LogIn from "./components/LogIn";
 import MyPage from "./components/MyPage";
 import PasswordCheck from "./components/PasswordCheck";
 import MyInform from "./components/MyInform";
+import MyList from "./components/MyList";
+import Shop from "./components/Shop";
+import Product from "./components/Product";
+import InsuranceSuggestion from "./components/InsuranceSuggestion";
+import InsuranceJoin from "./components/InsuranceJoin";
+import Payment from "./components/Payment";
+import PaymentCompleted from "./components/PaymentCompleted";
 
 function App() {
   return (
@@ -17,6 +24,16 @@ function App() {
       <Route path="/mypage" exact={true} component={MyPage} />
       <Route path="/mypage/passwordcheck" component={PasswordCheck} />
       <Route path="/mypage/myinform" component={MyInform} />
+      <Route path="/mypage/mylist" component={MyList} />
+      <Route path="/shop" exact={true} component={Shop} />
+      <Route path="/shop/product" exact={true} component={Product} />
+      <Route path="/shop/product/suggestion" component={InsuranceSuggestion} />
+      <Route path="/shop/product/join" component={InsuranceJoin} />
+      <Route path="/shop/product/payment" component={Payment} />
+      <Route
+        path="/shop/product/paymentcompleted"
+        component={PaymentCompleted}
+      />
     </HashRouter>
   );
 }

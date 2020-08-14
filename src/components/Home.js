@@ -18,9 +18,10 @@ class Home extends React.Component {
               <img className="home_img" src={home_img} alt="img"></img>
             </div>
             <div className="home_main__link">
-              <div className="gotobuy_btn">
+              <Link className="gotobuy_btn" to="/shop">
                 <div className="gotobuy">Go To Buy</div>
-              </div>
+              </Link>
+
               <div className="insurance_btn">
                 <div className="insurance">insurance</div>
               </div>

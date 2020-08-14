@@ -39,10 +39,10 @@
 }
 
 .signup_complete {
+  margin-top: 150px;
+  margin-right: 50px;
   display: flex;
   justify-content: flex-end;
-  background-color: red;
-  width: 100%;
 }
 .signup_complete__btn {
   background-color: #d3f1f8;

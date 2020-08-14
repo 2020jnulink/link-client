@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navigation_var from "./Navigation_var";
-import "./MyPage.css";
+import "./Shop.css";
 
-class MyPage extends React.Component {
+class Shop extends React.Component {
   render() {
     return (
       <div className="frame">
@@ -14,17 +14,12 @@ class MyPage extends React.Component {
           <div className="title_underline"></div>
           <div className="main">
             <div className="main_title">
-              <div className="main_title__text">My Page</div>
+              <div className="main_title__text">Search</div>
+              <input></input>
             </div>
-            <div className="mypage_btns">
-              <Link className="mypage_inform" to="/mypage/passwordcheck">
-                Information Modification
-              </Link>
-              <Link className="mypage_list" to="/mypage/mylist">
-                List of Goods & Insurance
-              </Link>
-              <div className="mypage_insurance">Insurance Requestion list</div>
-            </div>
+            <Link className="conduct_list" to="/shop/product">
+              <div className="conduct_list__text">img</div>
+            </Link>
           </div>
         </body>
         <div className="nav_var">
@@ -35,4 +30,4 @@ class MyPage extends React.Component {
   }
 }
 
-export default MyPage;
+export default Shop;
