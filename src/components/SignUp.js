@@ -45,7 +45,9 @@ class SignUp extends React.Component {
               </div>
             </div>
             <div className="signup_complete">
-              <div className="signup_complete__btn">Sign Up</div>
+              <Link className="signup_complete__btn" to="/login">
+                Sign Up
+              </Link>
             </div>
           </div>
         </body>

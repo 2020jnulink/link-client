@@ -21,10 +21,9 @@ class Home extends React.Component {
               <Link className="gotobuy_btn" to="/shop">
                 <div className="gotobuy">Go To Buy</div>
               </Link>
-
-              <div className="insurance_btn">
-                <div className="insurance">insurance</div>
-              </div>
+              <Link className="insurance_btn" to="/insurance">
+                <div className="gotobuy">Insurance</div>
+              </Link>
             </div>
           </div>
         </body>

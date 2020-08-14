@@ -14,6 +14,11 @@ import InsuranceSuggestion from "./components/InsuranceSuggestion";
 import InsuranceJoin from "./components/InsuranceJoin";
 import Payment from "./components/Payment";
 import PaymentCompleted from "./components/PaymentCompleted";
+import InsuranceList from "./components/InsuranceList";
+import InsuranceRequest from "./components/InsuranceRequest";
+import RequestComplete from "./components/RequestComplete";
+import RequestList from "./components/RequestList";
+import RequestDetail from "./components/RequestDetail";
 
 function App() {
   return (
@@ -34,6 +39,11 @@ function App() {
         path="/shop/product/paymentcompleted"
         component={PaymentCompleted}
       />
+      <Route path="/insurance" exact={true} component={InsuranceList} />
+      <Route path="/insurance/request" component={InsuranceRequest} />
+      <Route path="/insurance/requestcomplete" component={RequestComplete} />
+      <Route path="/mypage/request" exact={true} component={RequestList} />
+      <Route path="/mypage/request/detail" component={RequestDetail} />
     </HashRouter>
   );
 }

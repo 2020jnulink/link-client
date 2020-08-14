@@ -23,7 +23,9 @@ class MyPage extends React.Component {
               <Link className="mypage_list" to="/mypage/mylist">
                 List of Goods & Insurance
               </Link>
-              <div className="mypage_insurance">Insurance Requestion list</div>
+              <Link className="mypage_insurance" to="/mypage/request">
+                Insurance Requestion list
+              </Link>
             </div>
           </div>
         </body>
