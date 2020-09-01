@@ -4,7 +4,29 @@ import Navigation_var from "./Navigation_var";
 import "./Payment.css";
 
 class Payment extends React.Component {
+  state = {
+    payment_product: "",
+    payment_insurance: "",
+    payment_total: "",
+    payment_number: "",
+    payment_password: "",
+    payment_validity: "",
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.targetname]: e.target.value,
+    });
+    console.log(this.state);
+  };
   render() {
+    const {
+      payment_product,
+      payment_insurance,
+      payment_total,
+      payment_number,
+      payment_password,
+      payment_validity,
+    } = this.state;
     return (
       <div className="frame">
         <body>
@@ -34,12 +56,30 @@ class Payment extends React.Component {
                 <div className="payment_var__var">:</div>
               </div>
               <div className="payment_main__input">
-                <div className="payment_input__product" />
-                <div className="payment_input__insurance" />
-                <div className="payment_input__total" />
-                <div className="payment_input__number" />
-                <div className="payment_input__password" />
-                <div className="payment_input__validity" />
+                <input
+                  className="payment_input__product"
+                  value={this.state.payment_product}
+                />
+                <input
+                  className="payment_input__insurance"
+                  value={this.state.payment_insurance}
+                />
+                <input
+                  className="payment_input__total"
+                  value={this.state.payment_total}
+                />
+                <input
+                  className="payment_input__number"
+                  value={this.state.payment_number}
+                />
+                <input
+                  className="payment_input__password"
+                  value={this.state.payment_password}
+                />
+                <input
+                  className="payment_input__validity"
+                  value={this.state.payment_validity}
+                />
               </div>
             </div>
             <div className="payment_complete">
