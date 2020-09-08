@@ -1,10 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./SignUp.css";
 
 class SignUp extends React.Component {
+  state = {
+    signup_name: "", // eslint-disable-line no-unused-vars
+    signup_id: "", // eslint-disable-line no-unused-vars
+    signup_password: "", // eslint-disable-line no-unused-vars
+    signup_resident: "", // eslint-disable-line no-unused-vars
+    signup_address: "", // eslint-disable-line no-unused-vars
+    signup_phone: "", // eslint-disable-line no-unused-vars
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.targetname]: e.target.value,
+    });
+    console.log(this.state);
+  };
   render() {
+    const {
+      signup_name, // eslint-disable-line no-unused-vars
+      signup_id, // eslint-disable-line no-unused-vars
+      signup_password, // eslint-disable-line no-unused-vars
+      signup_resident, // eslint-disable-line no-unused-vars
+      signup_address, // eslint-disable-line no-unused-vars
+      signup_phone, // eslint-disable-line no-unused-vars
+    } = this.state;
     return (
       <div className="frame">
         <body>
@@ -36,12 +58,36 @@ class SignUp extends React.Component {
                 <div className="signup_var__var">:</div>
               </div>
               <div className="signup_main__input">
-                <div className="signup_input__name" />
-                <div className="signup_input__id" />
-                <div className="signup_input__password" />
-                <div className="signup_input__resident" />
-                <div className="signup_input__address" />
-                <div className="signup_input__phone" />
+                <input
+                  className="signup_input__name"
+                  value={this.state.signup_name} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
+                <input
+                  className="signup_input__id"
+                  value={this.state.signup_id} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
+                <input
+                  className="signup_input__password"
+                  value={this.state.signup_password} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
+                <input
+                  className="signup_input__resident"
+                  value={this.state.signup_resident} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
+                <input
+                  className="signup_input__address"
+                  value={this.state.signup_address} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
+                <input
+                  className="signup_input__phone"
+                  value={this.state.signup_phone} // eslint-disable-line no-unused-vars
+                  onChange={this.handleChange}
+                />
               </div>
             </div>
             <div className="signup_complete">

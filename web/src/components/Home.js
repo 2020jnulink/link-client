@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import home_img from "./img/home.jpg";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {

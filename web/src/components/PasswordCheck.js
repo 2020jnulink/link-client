@@ -1,10 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./PasswordCheck.css";
 
 class PasswordCheck extends React.Component {
+  state = {
+    passwordcheck: "", // eslint-disable-line no-unused-vars
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.targetname]: e.target.value,
+    });
+    console.log(this.state);
+  };
   render() {
+    const { passwordcheck } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="frame">
         <body>
