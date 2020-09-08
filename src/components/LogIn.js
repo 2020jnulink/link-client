@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./LogIn.css";
 
 class LogIn extends React.Component {
   state = {
-    login_id: "",
-    login_password: "",
+    login_id: "", // eslint-disable-line no-unused-vars
+    login_password: "", // eslint-disable-line no-unused-vars
   };
   handleChange = (e) => {
     this.setState({
@@ -15,7 +15,7 @@ class LogIn extends React.Component {
     console.log(this.state);
   };
   render() {
-    const { login_id, login_password } = this.state;
+    const { login_id, login_password } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="frame">
         <body>
@@ -39,13 +39,15 @@ class LogIn extends React.Component {
               <div className="login_main__input">
                 <input
                   className="login_input__id"
-                  value={this.state.login_id}
+                  value={this.state.login_id} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="login_id"
                 />
                 <input
                   className="login_input__password"
-                  value={this.state.login_password}
+                  value={this.state.login_password} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="login_pasword"
                 />
               </div>
             </div>

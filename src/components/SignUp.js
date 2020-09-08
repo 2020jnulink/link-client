@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./SignUp.css";
 
 class SignUp extends React.Component {
   state = {
-    signup_name: "",
-    signup_id: "",
-    signup_password: "",
-    signup_resident: "",
-    signup_address: "",
-    signup_phone: "",
+    signup_name: "", // eslint-disable-line no-unused-vars
+    signup_id: "", // eslint-disable-line no-unused-vars
+    signup_password: "", // eslint-disable-line no-unused-vars
+    signup_resident: "", // eslint-disable-line no-unused-vars
+    signup_address: "", // eslint-disable-line no-unused-vars
+    signup_phone: "", // eslint-disable-line no-unused-vars
   };
   handleChange = (e) => {
     this.setState({
@@ -20,12 +20,12 @@ class SignUp extends React.Component {
   };
   render() {
     const {
-      signup_name,
-      signup_id,
-      signup_password,
-      signup_resident,
-      signup_address,
-      signup_phone,
+      signup_name, // eslint-disable-line no-unused-vars
+      signup_id, // eslint-disable-line no-unused-vars
+      signup_password, // eslint-disable-line no-unused-vars
+      signup_resident, // eslint-disable-line no-unused-vars
+      signup_address, // eslint-disable-line no-unused-vars
+      signup_phone, // eslint-disable-line no-unused-vars
     } = this.state;
     return (
       <div className="frame">
@@ -60,33 +60,39 @@ class SignUp extends React.Component {
               <div className="signup_main__input">
                 <input
                   className="signup_input__name"
-                  value={this.state.signup_name}
+                  value={this.state.signup_name} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_name"
                 />
                 <input
                   className="signup_input__id"
-                  value={this.state.signup_id}
+                  value={this.state.signup_id} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_id"
                 />
                 <input
                   className="signup_input__password"
-                  value={this.state.signup_password}
+                  value={this.state.signup_password} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_password"
                 />
                 <input
                   className="signup_input__resident"
-                  value={this.state.signup_resident}
+                  value={this.state.signup_resident} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_resident"
                 />
                 <input
                   className="signup_input__address"
-                  value={this.state.signup_address}
+                  value={this.state.signup_address} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_address"
                 />
                 <input
                   className="signup_input__phone"
-                  value={this.state.signup_phone}
+                  value={this.state.signup_phone} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
+                  name="signup_phone"
                 />
               </div>
             </div>

@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./MyInform.css";
 
 class MyInform extends React.Component {
   state = {
-    mypage_name: "",
-    mypage_id: "",
-    mypage_password: "",
-    mypage_resident: "",
-    mypage_address: "",
-    mypage_phone: "",
+    mypage_name: "", // eslint-disable-line no-unused-vars
+    mypage_id: "", // eslint-disable-line no-unused-vars
+    mypage_password: "", // eslint-disable-line no-unused-vars
+    mypage_resident: "", // eslint-disable-line no-unused-vars
+    mypage_address: "", // eslint-disable-line no-unused-vars
+    mypage_phone: "", // eslint-disable-line no-unused-vars
   };
   handleChange = (e) => {
     this.setState({
@@ -20,12 +20,12 @@ class MyInform extends React.Component {
   };
   render() {
     const {
-      mypage_name,
-      mypage_id,
-      mypage_password,
-      mypage_resident,
-      mypage_address,
-      mypage_phone,
+      mypage_name, // eslint-disable-line no-unused-vars
+      mypage_id, // eslint-disable-line no-unused-vars
+      mypage_password, // eslint-disable-line no-unused-vars
+      mypage_resident, // eslint-disable-line no-unused-vars
+      mypage_address, // eslint-disable-line no-unused-vars
+      mypage_phone, // eslint-disable-line no-unused-vars
     } = this.state;
     return (
       <div className="frame">
@@ -60,27 +60,39 @@ class MyInform extends React.Component {
               <div className="myinform_main__input">
                 <input
                   className="myinform_input__name"
-                  value={this.state.mypage_name}
+                  onChange={this.handleChange}
+                  name="mypage_name"
+                  value={this.state.mypage_name} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="myinform_input__id"
-                  value={this.state.mypage_id}
+                  onChange={this.handleChange}
+                  name="mypage_id"
+                  value={this.state.mypage_id} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="myinform_input__password"
-                  value={this.state.mypage_password}
+                  onChange={this.handleChange}
+                  name="mypage_password"
+                  value={this.state.mypage_password} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="myinform_input__resident"
-                  value={this.state.mypage_resident}
+                  onChange={this.handleChange}
+                  name="mypage_resident"
+                  value={this.state.mypage_resident} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="myinform_input__address"
-                  value={this.state.mypage_address}
+                  onChange={this.handleChange}
+                  name="mypage_address"
+                  value={this.state.mypage_address} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="myinform_input__phone"
-                  value={this.state.mypage_phone}
+                  onChange={this.handleChange}
+                  name="mypage_phone"
+                  value={this.state.mypage_phone} // eslint-disable-line no-unused-vars
                 />
               </div>
             </div>

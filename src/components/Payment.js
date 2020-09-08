@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./Payment.css";
 
 class Payment extends React.Component {
   state = {
-    payment_product: "",
-    payment_insurance: "",
-    payment_total: "",
-    payment_number: "",
-    payment_password: "",
-    payment_validity: "",
+    payment_product: "", // eslint-disable-line no-unused-vars
+    payment_insurance: "", // eslint-disable-line no-unused-vars
+    payment_total: "", // eslint-disable-line no-unused-vars
+    payment_number: "", // eslint-disable-line no-unused-vars
+    payment_password: "", // eslint-disable-line no-unused-vars
+    payment_validity: "", // eslint-disable-line no-unused-vars
   };
   handleChange = (e) => {
     this.setState({
@@ -20,12 +20,12 @@ class Payment extends React.Component {
   };
   render() {
     const {
-      payment_product,
-      payment_insurance,
-      payment_total,
-      payment_number,
-      payment_password,
-      payment_validity,
+      payment_product, // eslint-disable-line no-unused-vars
+      payment_insurance, // eslint-disable-line no-unused-vars
+      payment_total, // eslint-disable-line no-unused-vars
+      payment_number, // eslint-disable-line no-unused-vars
+      payment_password, // eslint-disable-line no-unused-vars
+      payment_validity, // eslint-disable-line no-unused-vars
     } = this.state;
     return (
       <div className="frame">
@@ -58,27 +58,39 @@ class Payment extends React.Component {
               <div className="payment_main__input">
                 <input
                   className="payment_input__product"
-                  value={this.state.payment_product}
+                  onChange={this.handleChange}
+                  name="payment_product"
+                  value={this.state.payment_product} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="payment_input__insurance"
-                  value={this.state.payment_insurance}
+                  onChange={this.handleChange}
+                  name="payment_insurance"
+                  value={this.state.payment_insurance} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="payment_input__total"
-                  value={this.state.payment_total}
+                  onChange={this.handleChange}
+                  name="payment_total"
+                  value={this.state.payment_total} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="payment_input__number"
-                  value={this.state.payment_number}
+                  onChange={this.handleChange}
+                  name="payment_number"
+                  value={this.state.payment_number} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="payment_input__password"
-                  value={this.state.payment_password}
+                  onChange={this.handleChange}
+                  name="payment_password"
+                  value={this.state.payment_password} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="payment_input__validity"
-                  value={this.state.payment_validity}
+                  onChange={this.handleChange}
+                  name="payment_validity"
+                  value={this.state.payment_validity} // eslint-disable-line no-unused-vars
                 />
               </div>
             </div>

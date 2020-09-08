@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./InsuranceJoin.css";
 
 class InsuranceJoin extends React.Component {
   state = {
-    join_insurance: "",
-    join_name: "",
-    join_address: "",
-    join_phone: "",
-    join_period: "",
-    join_price: "",
+    join_insurance: "", // eslint-disable-line no-unused-vars
+    join_name: "", // eslint-disable-line no-unused-vars
+    join_address: "", // eslint-disable-line no-unused-vars
+    join_phone: "", // eslint-disable-line no-unused-vars
+    join_period: "", // eslint-disable-line no-unused-vars
+    join_price: "", // eslint-disable-line no-unused-vars
   };
   handleChange = (e) => {
     this.setState({
@@ -20,12 +20,12 @@ class InsuranceJoin extends React.Component {
   };
   render() {
     const {
-      join_insurance,
-      join_name,
-      join_address,
-      join_phone,
-      join_period,
-      join_price,
+      join_insurance, // eslint-disable-line no-unused-vars
+      join_name, // eslint-disable-line no-unused-vars
+      join_address, // eslint-disable-line no-unused-vars
+      join_phone, // eslint-disable-line no-unused-vars
+      join_period, // eslint-disable-line no-unused-vars
+      join_price, // eslint-disable-line no-unused-vars
     } = this.state;
     return (
       <div className="frame">
@@ -58,27 +58,39 @@ class InsuranceJoin extends React.Component {
               <div className="join_main__input">
                 <input
                   className="join_input__insurance"
-                  value={this.state.join_insurance}
+                  onChange={this.handleChange}
+                  name="join_insurance"
+                  value={this.state.join_insurance} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="join_input__name"
-                  value={this.state.join_name}
+                  onChange={this.handleChange}
+                  name="join_name"
+                  value={this.state.join_name} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="join_input__address"
-                  value={this.state.join_address}
+                  onChange={this.handleChange}
+                  name="join_address"
+                  value={this.state.join_address} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="join_input__phone"
-                  value={this.state.join_phone}
+                  onChange={this.handleChange}
+                  name="join_phone"
+                  value={this.state.join_phone} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="join_input__period"
-                  value={this.state.join_period}
+                  onChange={this.handleChange}
+                  name="join_period"
+                  value={this.state.join_period} // eslint-disable-line no-unused-vars
                 />
                 <input
                   className="join_input__price"
-                  value={this.state.join_price}
+                  onChange={this.handleChange}
+                  name="join_price"
+                  value={this.state.join_price} // eslint-disable-line no-unused-vars
                 />
               </div>
             </div>

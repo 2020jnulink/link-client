@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import product_img from "./img/product.jpg";
-import Navigation_var from "./Navigation_var";
+import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./Product.css";
 
 class Product extends React.Component {
