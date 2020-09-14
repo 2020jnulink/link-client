@@ -12,7 +12,7 @@ import product_gyro_img from "./img/gyrocorp.png";
 import product_nano_img from "./img/nano wheel.png";
 import product_papa_img from "./img/PAPA.png";
 import product_WR_img from "./img/Wheel Runner.png";
-import product_WW_img from "./img/wide wheel.png";
+import product_WW_img from "./img/widewheel.png";
 
 class Shop extends React.Component {
   render() {
