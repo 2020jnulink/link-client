@@ -14,19 +14,10 @@ class SignUp extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const {
-      signup_name, // eslint-disable-line no-unused-vars
-      signup_id, // eslint-disable-line no-unused-vars
-      signup_password, // eslint-disable-line no-unused-vars
-      signup_resident, // eslint-disable-line no-unused-vars
-      signup_address, // eslint-disable-line no-unused-vars
-      signup_phone, // eslint-disable-line no-unused-vars
-    } = this.state;
     return (
       <div className="frame">
         <body>

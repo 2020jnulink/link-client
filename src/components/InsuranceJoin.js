@@ -14,19 +14,10 @@ class InsuranceJoin extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const {
-      join_insurance, // eslint-disable-line no-unused-vars
-      join_name, // eslint-disable-line no-unused-vars
-      join_address, // eslint-disable-line no-unused-vars
-      join_phone, // eslint-disable-line no-unused-vars
-      join_period, // eslint-disable-line no-unused-vars
-      join_price, // eslint-disable-line no-unused-vars
-    } = this.state;
     return (
       <div className="frame">
         <body>

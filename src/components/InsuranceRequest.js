@@ -11,12 +11,10 @@ class InsuranceRequest extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const { request_type, request_date, request_description } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="frame">
         <body>

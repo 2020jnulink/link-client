@@ -8,34 +8,32 @@ class Navigation_var extends Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const { search } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="navigation">
         <div className="link">
           <Link className="nav_signup" to="/signup">
-            Sign Up{" "}
-          </Link>{" "}
+            Sign Up
+          </Link>
           <Link className="nav_login" to="/login">
-            Log In{" "}
-          </Link>{" "}
+            Log In
+          </Link>
           <Link className="nav_mypage" to="/mypage">
-            My Page{" "}
-          </Link>{" "}
+            My Page
+          </Link>
           <Link className="nav_home" to="/">
-            Home{" "}
-          </Link>{" "}
+            Home
+          </Link>
           <Link className="nav_shop" to="/shop">
-            SHOP{" "}
-          </Link>{" "}
+            SHOP
+          </Link>
           <Link className="nav_insurance" to="/insurance">
-            INSURANCE{" "}
-          </Link>{" "}
-        </div>{" "}
+            INSURANCE
+          </Link>
+        </div>
         <div className="nav_search">
           <input
             className="search_input"
@@ -43,8 +41,8 @@ class Navigation_var extends Component {
             onChange={this.handleChange}
             name="search"
           />
-          <div className="search_text"> Search </div>{" "}
-        </div>{" "}
+          <div className="search_text"> Search </div>
+        </div>
       </div>
     );
   }

@@ -14,19 +14,10 @@ class Payment extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const {
-      payment_product, // eslint-disable-line no-unused-vars
-      payment_insurance, // eslint-disable-line no-unused-vars
-      payment_total, // eslint-disable-line no-unused-vars
-      payment_number, // eslint-disable-line no-unused-vars
-      payment_password, // eslint-disable-line no-unused-vars
-      payment_validity, // eslint-disable-line no-unused-vars
-    } = this.state;
     return (
       <div className="frame">
         <body>

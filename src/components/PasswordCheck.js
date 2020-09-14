@@ -9,12 +9,10 @@ class PasswordCheck extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const { passwordcheck } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="frame">
         <body>

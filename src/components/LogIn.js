@@ -10,12 +10,10 @@ class LogIn extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const { login_id, login_password } = this.state; // eslint-disable-line no-unused-vars
     return (
       <div className="frame">
         <body>
@@ -47,7 +45,7 @@ class LogIn extends React.Component {
                   className="login_input__password"
                   value={this.state.login_password} // eslint-disable-line no-unused-vars
                   onChange={this.handleChange}
-                  name="login_pasword"
+                  name="login_password"
                 />
               </div>
             </div>
