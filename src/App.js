@@ -43,6 +43,7 @@ function App() {
       <Route path="/shop/product_AU" exact={true} component={Product_AU} />
       <Route path="/shop/product_carborn" exact={true} component={Product_carborn} />
       <Route path="/shop/product_delta" exact={true} component={Product_delta} />
+      <Route path="/shop/product_EZ" exact={true} component={Product_EZ} />
       <Route path="/shop/product_freego" exact={true} component={Product_freego} />
       <Route path="/shop/product_gyro" exact={true} component={Product_gyro} />
       <Route path="/shop/product_nano" exact={true} component={Product_nano} />
