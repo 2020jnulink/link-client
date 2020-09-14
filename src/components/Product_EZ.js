@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import product_img from "./img/EZ Wheel.png";
 import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
-import "./Product.css";
+import "./Product_EZ.css";
 
 class Product extends React.Component {
   render() {
