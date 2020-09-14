@@ -9,7 +9,16 @@ import PasswordCheck from "./components/PasswordCheck";
 import MyInform from "./components/MyInform";
 import MyList from "./components/MyList";
 import Shop from "./components/Shop";
-import Product from "./components/Product";
+import Product_AU from "./components/Product_AU";
+import Product_carborn from "./components/Product_carborn";
+import Product_delta from "./components/Product_delta";
+import Product_EZ from "./components/Product_EZ";
+import Product_freego from "./components/Product_freego";
+import Product_gyro from "./components/Product_gyro";
+import Product_nano from "./components/Product_nano";
+import Product_papa from "./components/Product_papa";
+import Product_WR from "./components/Product_WR";
+import Product_WW from "./components/Product_WW";
 import InsuranceSuggestion from "./components/InsuranceSuggestion";
 import InsuranceJoin from "./components/InsuranceJoin";
 import Payment from "./components/Payment";
@@ -31,14 +40,19 @@ function App() {
       <Route path="/mypage/myinform" component={MyInform} />
       <Route path="/mypage/mylist" component={MyList} />
       <Route path="/shop" exact={true} component={Shop} />
-      <Route path="/shop/product" exact={true} component={Product} />
+      <Route path="/shop/product_AU" exact={true} component={Product_AU} />
+      <Route path="/shop/product_carborn" exact={true} component={Product_carborn} />
+      <Route path="/shop/product_delta" exact={true} component={Product_delta} />
+      <Route path="/shop/product_freego" exact={true} component={Product_freego} />
+      <Route path="/shop/product_gyrocorp" exact={true} component={Product_gyrocorp} />
+      <Route path="/shop/product_nano" exact={true} component={Product_nano} />
+      <Route path="/shop/product_papa" exact={true} component={Product_papa} />
+      <Route path="/shop/product_WR" exact={true} component={Product_WR} />
+      <Route path="/shop/product_WW" exact={true} component={Product_WW} />
       <Route path="/shop/product/suggestion" component={InsuranceSuggestion} />
       <Route path="/shop/product/join" component={InsuranceJoin} />
       <Route path="/shop/product/payment" component={Payment} />
-      <Route
-        path="/shop/product/paymentcompleted"
-        component={PaymentCompleted}
-      />
+      <Route path="/shop/product/paymentcompleted" component={PaymentCompleted}  />
       <Route path="/insurance" exact={true} component={InsuranceList} />
       <Route path="/insurance/request" component={InsuranceRequest} />
       <Route path="/insurance/requestcomplete" component={RequestComplete} />
