@@ -4,7 +4,7 @@ import product_img from "./img/widewheel.png";
 import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./Product.css";
 
-class Product extends React.Component {
+class Product_WW extends React.Component {
   render() {
     return (
       <div className="frame">
@@ -17,21 +17,30 @@ class Product extends React.Component {
             <div className="product_summary">
               <img className="product_img" src={product_img} alt="img" />
               <div className="product_text">
-                <div className="product_text__name">제품명 :</div>
-                <div className="product_text__model">모델명 :</div>
-                <div className="product_text__manufact">제조회사 :</div>
-                <div className="product_text__price">가격 :</div>
+                <div className="product_text__name">
+                  제품명 : Wide Wheel Pro 48V
+                </div>
+                <div className="product_text__model">모델명 :WIDEWHEELPRO</div>
+                <div className="product_text__manufact">
+                  제조회사 : Machaine
+                </div>
+                <div className="product_text__price">가격 : 798,000원</div>
               </div>
             </div>
             <div className="product_buy">
-              <Link className="product_buy__btn" to="/shop/product_WW/suggestion">
+              <Link className="product_buy__btn" to="/shop/product/suggestion">
                 Buy
               </Link>
             </div>
             <div className="product_detail">
               <div className="product_detail__text">Detail information</div>
               <div className="product_detail__line" />
-              <div className="product_detail__main" />
+              <div className="product_detail__main">
+                {" "}
+                최대 속력 : 25km/h 최대 주행거리 : 50km 최대 등판각도 : 40도
+                배터리 : 45V 15Ah 타이어 : 100mm 초광폭 타이어 브레이크 : 120mm
+                듀얼 디스크 브레이크
+              </div>
             </div>
           </div>
         </body>
@@ -42,5 +51,4 @@ class Product extends React.Component {
     );
   }
 }
-
-export default Product;
+export default Product_WW;

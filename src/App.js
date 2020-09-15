@@ -43,6 +43,7 @@ function App() {
       <Route path="/shop/product_AU" component={Product_AU} />
       <Route path="/shop/product_carborn" component={Product_carborn} />
       <Route path="/shop/product_delta" component={Product_delta} />
+      <Route path="/shop/product_delta" component={Product_EZ} />
       <Route path="/shop/product_freego" component={Product_freego} />
       <Route path="/shop/product_gyrocorp" component={Product_gyro} />
       <Route path="/shop/product_nano" component={Product_nano} />
