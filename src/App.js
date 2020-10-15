@@ -21,6 +21,9 @@ import Product_WR from "./components/Product_WR";
 import Product_WW from "./components/Product_WW";
 import Payment from "./components/Payment";
 import PaymentCompleted from "./components/PaymentCompleted";
+import Seller from "./components/Seller";
+import Scooter_Create from "./components/Scooter_Create";
+
 
 function App() {
   return (
@@ -48,6 +51,9 @@ function App() {
         path="/shop/product/paymentcompleted"
         component={PaymentCompleted}
       />
+      <Route path="/seller" exact={true} component={Seller} />
+      <Route path="/seller/create" exact={true} component={Scooter_Create} />
+
     </HashRouter>
   );
 }
