@@ -31,7 +31,7 @@ class Shop extends React.Component {
             <Link className="link_AU" to="/shop/product_AU">
               <img className="product_AU_img" src={product_AU_img} alt="img" />
             </Link>
-            <Link className="link_carborn" to="/shop/product_carborn">
+            {/* <Link className="link_carborn" to="/shop/product_carborn">
               <img
                 className="product_carborn_img"
                 src={product_carborn_img}
@@ -81,7 +81,7 @@ class Shop extends React.Component {
             </Link>
             <Link className="link_WW" to="/shop/product_WW">
               <img className="product_WW_img" src={product_WW_img} alt="img" />
-            </Link>
+            </Link> */}
           </div>
         </body>
         <div className="nav_var">

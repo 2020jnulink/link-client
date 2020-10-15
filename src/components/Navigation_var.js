@@ -30,9 +30,6 @@ class Navigation_var extends Component {
           <Link className="nav_shop" to="/shop">
             SHOP
           </Link>
-          <Link className="nav_insurance" to="/insurance">
-            INSURANCE
-          </Link>
         </div>
         <div className="nav_search">
           <input

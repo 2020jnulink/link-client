@@ -4,29 +4,79 @@ import product_img from "./img/AU_TECH.png";
 import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
 import "./Product_AU.css";
 
+
+
+
+
 class Product_AU extends React.Component {
+
+  state = {
+    productname: "Fabric",
+    manufactureer:"Hyper",
+    price:"20",
+    walletid:"5T6Y7U8I",
+    scooterkey:"MS0"
+  }
+
+  handleClick = (e) => {
+    //e.prevendDefault();
+  
+  
+  //   console.log("shop_info" + JSON.stringify(this.state))
+  //   fetch('http://localhost:3001/api/purchaseMusic', {
+  //       method: 'POST',
+  //       mode: 'cors',
+  //       headers: {
+  //           'Content-Type': 'application/json'
+  //       },
+  //       body:  JSON.stringify(this.state)
+  //     })
+  //   .then(response => console.log("response"))
+  //  .then(response => response.json());
+    
+      fetch("http://localhost:3001/api/purchaseScooter",{
+        method:'POST',
+        mode:'cors',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+          walletid: this.state.walletid,
+          scooterkey: this.state.scooterkey
+        })
+      })
+      .then(console.log(JSON.stringify({
+        walletid:"5T6Y7U8I"
+      })))
+      .then(res =>res.json());
+
+
+  
+  }
+
   render() {
     return (
       <div className="frame">
         <body>
           <div className="header">
-            <div className="title">LINK</div>
+            <div className="productname">LINK</div>
           </div>
-          <div className="title_underline"></div>
+          <div className="productname_underline"></div>
           <div className="main">
             <div className="product_summary">
               <img className="product_img" src={product_img} alt="img" />
               <div className="product_text">
-                <div className="product_text__name">제품명 : Red Wing</div>
+                <div className="product_text__name">제품명 : {this.state.productname}</div>
                 <div className="product_text__model">
                   모델명 : REDWINGBLACK8A
                 </div>
-                <div className="product_text__manufact">제조회사 : AU Tech</div>
-                <div className="product_text__price">가격 : 299,000원</div>
+                <div className="product_text__manufact">제조회사 : {this.state.singer}</div>
+                <div className="product_text__price">가격 : {this.state.price}</div>
               </div>
             </div>
             <div className="product_buy">
-              <Link className="product_buy__btn" to="/shop/product/suggestion">
+              <Link className="product_buy__btn" to="/shop/product/paymentcompleted"
+              onClick={this.handleClick}>
                 Buy
               </Link>
             </div>
