@@ -20,10 +20,10 @@ class Seller extends React.Component {
               <Link className="seller_create" to="/seller/create">
                 Create Scooter
               </Link>
-              <Link className="seller_change" to="">
+              <Link className="seller_change" to="/seller/change">
                 Change Scooter
               </Link>
-              <Link className="seller_delete" to="">
+              <Link className="seller_delete" to="/seller/delete">
                 Delete Scooter
               </Link>
             </div>

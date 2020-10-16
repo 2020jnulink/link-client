@@ -15,6 +15,14 @@ import product_WR_img from "./img/Wheel_Runner.png";
 import product_WW_img from "./img/widewheel.png";
 
 class Shop extends React.Component {
+  state = {
+    scooterkey: "", // eslint-disable-line no-unused-vars
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
   render() {
     return (
       <div className="frame">
@@ -26,7 +34,12 @@ class Shop extends React.Component {
           <div className="main">
             <div className="main_title">
               <div className="main_title__text">Search</div>
-              <input></input>
+              <input
+                className="search_input"
+                value={this.state.scooterkey} // eslint-disable-line no-unused-vars
+                onChange={this.handleChange}
+                name="scooterkey"
+              />
             </div>
             <Link className="link_AU" to="/shop/product_AU">
               <img className="product_AU_img" src={product_AU_img} alt="img" />

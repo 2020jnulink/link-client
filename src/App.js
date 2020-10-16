@@ -23,6 +23,8 @@ import Payment from "./components/Payment";
 import PaymentCompleted from "./components/PaymentCompleted";
 import Seller from "./components/Seller";
 import Scooter_Create from "./components/Scooter_Create";
+import Scooter_Change from "./components/Scooter_Change";
+import Scooter_Delete from "./components/Scooter_Delete";
 
 
 function App() {
@@ -52,7 +54,9 @@ function App() {
         component={PaymentCompleted}
       />
       <Route path="/seller" exact={true} component={Seller} />
-      <Route path="/seller/create" exact={true} component={Scooter_Create} />
+      <Route path="/seller/create" component={Scooter_Create} />
+      <Route path="/seller/change" component={Scooter_Change} />
+      <Route path="/seller/delete" component={Scooter_Delete} />
 
     </HashRouter>
   );
