@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import product_img from "./img/freego.png";
 import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
-import "./Product_freego.css";
+import "./Product.css";
 
-class Product extends React.Component {
+class Product_freego extends React.Component {
   render() {
     return (
       <div className="frame">
@@ -17,9 +17,13 @@ class Product extends React.Component {
             <div className="product_summary">
               <img className="product_img" src={product_img} alt="img" />
               <div className="product_text">
-                <div className="product_text__name">제품명 : freego direct F10</div>
+                <div className="product_text__name">
+                  제품명 : freego direct F10
+                </div>
                 <div className="product_text__model">모델명 : f10eco</div>
-                <div className="product_text__manufact">제조회사 : FreeGo Direct</div>
+                <div className="product_text__manufact">
+                  제조회사 : FreeGo Direct
+                </div>
                 <div className="product_text__price">가격 : 797,500원</div>
               </div>
             </div>
@@ -32,15 +36,10 @@ class Product extends React.Component {
               <div className="product_detail__text">Detail information</div>
               <div className="product_detail__line" />
               <div className="product_detail__main">
-                <div className="product_detail__main1">* 제품 무게 : 20kg </div>
-                <div className="product_detail__main2">* 탑승자 최대 무게 : 70kg</div>
-                <div className="product_detail__main3">* 최대 속력 : 40km/h </div>
-                <div className="product_detail__main4">* 최대 주행거리 : 109km </div>
-                <div className="product_detail__main5">* 배터리 : 52V 21Ah 리튬이온 배터리</div>
-                <div className="product_detail__main6">* 타이어 : 25.4cm 튜브타이어 </div>
-                <div className="product_detail__main7">* 브레이크 : 30도</div>
-                <div className="product_detail__main8">* 방수 : IPX4</div>
-             </div> 
+                제품 무게 : 20kg 탑승자 최대 무게 : 70kg 최대 속력 : 40km/h 최대
+                주행거리 : 109km 배터리 : 52V 21Ah 리튬이온 배터리 타이어 :
+                25.4cm 튜브타이어 브레이크 : 30도 방수 : IPX4
+              </div>
             </div>
           </div>
         </body>
@@ -52,4 +51,4 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+export default Product_freego;

@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import product_img from "./img/delta.png";
 import Navigation_var from "./Navigation_var"; // eslint-disable-line no-unused-vars
-import "./Product_delta.css";
+import "./Product.css";
 
-class Product extends React.Component {
+class Product_delta extends React.Component {
   render() {
     return (
       <div className="frame">
@@ -31,12 +31,9 @@ class Product extends React.Component {
             <div className="product_detail">
               <div className="product_detail__text">Detail information</div>
               <div className="product_detail__line" />
-              <div className="product_detail__main"> 
-                <div className="product_detail__main1">* 제품 무게 : 22kg </div>
-                <div className="product_detail__main2">* 최대 속력 : 25km/h </div>
-                <div className="product_detail__main3">* 최대 주행거리 : 30km </div>
-                <div className="product_detail__main4">* 최대 등판각도 : 10도 </div>
-                <div className="product_detail__main5">* 배터리 : 탈/착식 배터리</div> 
+              <div className="product_detail__main">
+                제품 무게 : 22kg 최대 속력 : 25km/h 최대 주행거리 : 30km 최대
+                등판각도 : 10도 배터리 : 탈/착식 배터리
               </div>
             </div>
           </div>
@@ -48,5 +45,4 @@ class Product extends React.Component {
     );
   }
 }
-
-export default Product;
+export default Product_delta;

@@ -14,19 +14,10 @@ class MyInform extends React.Component {
   };
   handleChange = (e) => {
     this.setState({
-      [e.targetname]: e.target.value,
+      [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
   render() {
-    const {
-      mypage_name, // eslint-disable-line no-unused-vars
-      mypage_id, // eslint-disable-line no-unused-vars
-      mypage_password, // eslint-disable-line no-unused-vars
-      mypage_resident, // eslint-disable-line no-unused-vars
-      mypage_address, // eslint-disable-line no-unused-vars
-      mypage_phone, // eslint-disable-line no-unused-vars
-    } = this.state;
     return (
       <div className="frame">
         <body>

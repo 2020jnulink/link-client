@@ -48,18 +48,3 @@
     border-bottom: 2px solid #538ec3;
   }
   
-  .product_detail .product_detail__main{
-    font-size: 30px;
-  }
-
-  .product_detail__main .product_detail__main1,
-  .product_detail__main .product_detail__main2,
-  .product_detail__main .product_detail__main3,
-  .product_detail__main .product_detail__main4,
-  .product_detail__main .product_detail__main5,
-  .product_detail__main .product_detail__main6,
-  .product_detail__main .product_detail__main7,
-  .product_detail__main .product_detail__main8{
-    margin-top: 30px;
-    margin-left: 50px;
-  }

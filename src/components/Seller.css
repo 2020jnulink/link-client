@@ -1,17 +1,18 @@
-.mypage_btns {
+.seller_btns {
   margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.mypage_btns .mypage_inform,
-.mypage_btns .mypage_list {
+.seller_btns .seller_create,
+.seller_btns .seller_change,
+.seller_btns .seller_delete {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #d3f1f8;
   width: 330px;
   height: 400px;
-  font-size: 50px;
+  font-size: 45px;
 }
