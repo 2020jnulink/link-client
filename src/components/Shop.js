@@ -15,15 +15,44 @@ import product_WR_img from "./img/Wheel_Runner.png";
 import product_WW_img from "./img/widewheel.png";
 
 class Shop extends React.Component {
-  state = {
-    scooterkey: "", // eslint-disable-line no-unused-vars
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      scooterList: [],
+      scooterkey: "", // eslint-disable-line no-unused-vars
+    };
+  }
+  componentDidMount() {
+    const getScooterList = localStorage.getItem("scooterList");
+    if (getScooterList) {
+      this.setState({ scooterList: JSON.parse(getScooterList) });
+    }
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
+  setIndex = index => {
+    this.setState({ index });
+  };
+
+  _renderScooterList = item => {
+    return (
+      <div className="class_list__ex">
+        <div className="class_list__name">{item.title}</div>
+        <div className="class_list__name">{item.title}</div>
+        <div className="class_list__name">{item.title}</div>
+        <div className="class_list__key">{item.title}</div>
+      </div>
+    );
+  };
+
   render() {
+    const { index } = this.state;
     return (
       <div className="frame">
         <body>
@@ -47,6 +76,11 @@ class Shop extends React.Component {
             <Link className="link_AU" to="/shop/product_test">
               <img className="product_AU_img" src={product_AU_img} alt="img" />
             </Link>
+            <div className="class_list">
+              {this.state.scooterList.map(item =>
+                this._renderScooterList(item)
+              )}
+            </div>
             {/* <Link className="link_carborn" to="/shop/product_carborn">
               <img
                 className="product_carborn_img"

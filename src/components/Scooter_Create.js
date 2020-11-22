@@ -11,71 +11,85 @@ const acceptedFileTypes =
 const acceptedFileTypesArray = acceptedFileTypes.split(",").map((item) => {
   return item.trim();
 });
+
 class Scooter_Create extends React.Component {
-    state = {
-      title: "", // eslint-disable-line no-unused-vars
-      manufacturer: "", // eslint-disable-line no-unused-vars
-      price: 20, // eslint-disable-line no-unused-vars
-      walletid: "", // eslint-disable-line no-unused-vars
+  constructor(props) {
+    super(props);
+    this.state = {
+      scooterList: [],
+      imgSrc: null,
+      showPopup: false,
+      index: 0
     };
-    handleChange = (e) => {
-      this.setState({
-        [e.target.name]: e.target.value,
-      });
-    };
-    constructor(props) {
-      super(props);
-      this.state = {
-        imgSrc: null,
-        showPopup: false,
-      };
+  }
+
+  componentDidMount() {
+    const getScooterList = localStorage.getItem("scooterList");
+    if (getScooterList) {
+      this.setState({ scooterList: JSON.parse(getScooterList) });
     }
-    verifyFile = (files) => {
-      if (files && files.length > 0) {
+  }
+
+  setStateScooterList = scooterList => {
+    this.setState({ scooterList });
+    localStorage.setItem("scooterList", JSON.stringify(scooterList));
+  };
+  setIndex = index => {
+    this.setState({ index });
+  };
+
+
+  verifyFile = (files) => {
+    if (files && files.length > 0) {
+      const currentFile = files[0];
+      const currentFileType = currentFile.type;
+      const currentFileSize = currentFile.size;
+      if (currentFileSize > imageMaxSize) {
+        alert(
+          "이 파일은 허용되지 않습니다." +
+          imageMaxSize +
+          "bytes이하의 파일을 업로드해주세요."
+        );
+        return false;
+      }
+      if (!acceptedFileTypesArray.includes(currentFileType)) {
+        alert("이미지 파일만 업로드 가능합니다.");
+        return false;
+      }
+      return true;
+    }
+  };
+  handleOnDrop = (files, rejectedFiles) => {
+    if (rejectedFiles && rejectedFiles.length > 0) {
+      this.verifyFile(rejectedFiles);
+    }
+    if (files && files.length > 0) {
+      const isVerified = this.verifyFile(files);
+      if (isVerified) {
+        //imageBase64Data
         const currentFile = files[0];
-        const currentFileType = currentFile.type;
-        const currentFileSize = currentFile.size;
-        if (currentFileSize > imageMaxSize) {
-          alert(
-            "이 파일은 허용되지 않습니다." +
-              imageMaxSize +
-              "bytes이하의 파일을 업로드해주세요."
-          );
-          return false;
-        }
-        if (!acceptedFileTypesArray.includes(currentFileType)) {
-          alert("이미지 파일만 업로드 가능합니다.");
-          return false;
-        }
-        return true;
+        const MyFileItemReader = new FileReader();
+        MyFileItemReader.addEventListener(
+          "load",
+          () => {
+            console.log(MyFileItemReader.result);
+            this.setState({
+              imgSrc: MyFileItemReader.result,
+            });
+          },
+          false
+        );
+        MyFileItemReader.readAsDataURL(currentFile);
       }
-    };
-    handleOnDrop = (files, rejectedFiles) => {
-      if (rejectedFiles && rejectedFiles.length > 0) {
-        this.verifyFile(rejectedFiles);
-      }
-      if (files && files.length > 0) {
-        const isVerified = this.verifyFile(files);
-        if (isVerified) {
-          //imageBase64Data
-          const currentFile = files[0];
-          const MyFileItemReader = new FileReader();
-          MyFileItemReader.addEventListener(
-            "load",
-            () => {
-              console.log(MyFileItemReader.result);
-              this.setState({
-                imgSrc: MyFileItemReader.result,
-              });
-            },
-            false
-          );
-          MyFileItemReader.readAsDataURL(currentFile);
-        }
-      }
-    };
+    }
+  };
+
   render() {
-    const { imgSrc } = this.state;
+    const { scooterList, setStateScooterList, index, imgSrc, title, manufacturer, price, walletid } = this.state;
+    console.log(
+      "scooterList.map(item => item.title) : ",
+      scooterList.map(item => item.title)
+    );
     return (
       <div className="frame">
         <body>
@@ -88,36 +102,36 @@ class Scooter_Create extends React.Component {
               <div className="main_title__text">Create Scooter</div>
             </div>
             <div className="create_main">
-            {imgSrc !== null ? (
-              <img id="create_img" src={imgSrc} />
-            ) : (
-            <Dropzone
-              onDrop={this.handleOnDrop}
-              accept={acceptedFileTypes}
-              className="drop_zone"
-            >
-              {({ getRootProps, getInputProps, isDragActive }) => {
-                return (
-                  <div
-                    {...getRootProps()}
-                    className={classNames("dropzone", {
-                      "dropzone--isActive": isDragActive,
-                    })}
+              {imgSrc !== null ? (
+                <img id="create_img" src={imgSrc} />
+              ) : (
+                  <Dropzone
+                    onDrop={this.handleOnDrop}
+                    accept={acceptedFileTypes}
+                    className="drop_zone"
                   >
-                    <input {...getInputProps()} />
-                    {isDragActive ? (
-                      <p>Drop files here...</p>
-                    ) : (
-                      <p>
-                        파일을 드래그 하거나, 클릭하여 파일을
-                        선택하세요.
-                      </p>
-                    )}
-                  </div>
-                );
-              }}
-            </Dropzone>
-            )}
+                    {({ getRootProps, getInputProps, isDragActive }) => {
+                      return (
+                        <div
+                          {...getRootProps()}
+                          className={classNames("dropzone", {
+                            "dropzone--isActive": isDragActive,
+                          })}
+                        >
+                          <input {...getInputProps()} />
+                          {isDragActive ? (
+                            <p>Drop files here...</p>
+                          ) : (
+                              <p>
+                                파일을 드래그 하거나, 클릭하여 파일을
+                                선택하세요.
+                              </p>
+                            )}
+                        </div>
+                      );
+                    }}
+                  </Dropzone>
+                )}
               <div className="create_main__que">
                 <div className="create_que__name">Title</div>
                 <div className="create_que__id">Manufacturer</div>
@@ -158,9 +172,25 @@ class Scooter_Create extends React.Component {
                   value={this.state.walletid} // eslint-disable-line no-unused-vars
                 />
               </div>
-              
             </div>
             <div className="create_complete">
+              <button
+                id="create_complete__btn"
+                onClick={() => {
+                  setStateScooterList(
+                    scooterList.concat([
+                      {
+                        title,
+                        manufacturer,
+                        price,
+                        walletid,
+                      }
+                    ])
+                  );
+                }}
+              >
+                Save
+              </button>
               <Link className="create_complete__btn" to="/seller">
                 Confirm
               </Link>
