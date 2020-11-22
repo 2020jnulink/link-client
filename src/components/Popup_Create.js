@@ -154,9 +154,9 @@ class Popup_Create extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <div className="class_create__close">
+                            <div className="scooter_create__close">
                                 <button
-                                    id="class_create__close_btn"
+                                    id="scooter_create__close_btn"
                                     onClick={() => {
                                         closePopup();
                                         setStateScooterList(

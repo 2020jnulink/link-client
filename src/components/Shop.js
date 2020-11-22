@@ -28,6 +28,10 @@ class Shop extends React.Component {
     if (getScooterList) {
       this.setState({ scooterList: JSON.parse(getScooterList) });
     }
+    const index1 = localStorage.getItem("index");
+    if (index1) {
+      this.setState({ index: JSON.parse(index1) });
+    }
   }
 
   handleChange = (e) => {
@@ -35,24 +39,27 @@ class Shop extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
+  handleSubmit = e => {
+    e.preventDefault(); //페이지 리로딩 방지
+    this.props.onCreate(this.state); //props로 받은 onCreate 호출
+  };
 
   setIndex = index => {
     this.setState({ index });
+    localStorage.setItem("index", JSON.stringify(index));
   };
 
   _renderScooterList = item => {
+    const { index, setIndex } = this.state;
     return (
-      <div className="class_list__ex">
-        <div className="class_list__name">{item.title}</div>
-        <div className="class_list__name">{item.title}</div>
-        <div className="class_list__name">{item.title}</div>
-        <div className="class_list__key">{item.title}</div>
-      </div>
+      <Link className="scooter_list__ex" to="/shop/product_test" >
+        <img className="scooter_list__img" src={item.imgSrc}></img>
+      </Link>
     );
   };
 
   render() {
-    const { index } = this.state;
+    const { index, setIndex } = this.state;
     return (
       <div className="frame">
         <body>
@@ -70,16 +77,17 @@ class Shop extends React.Component {
                 name="scooterkey"
               />
             </div>
-            <Link className="link_AU" to="/shop/product_AU">
-              <img className="product_AU_img" src={product_AU_img} alt="img" />
-            </Link>
-            <Link className="link_AU" to="/shop/product_test">
-              <img className="product_AU_img" src={product_AU_img} alt="img" />
-            </Link>
-            <div className="class_list">
-              {this.state.scooterList.map(item =>
-                this._renderScooterList(item)
-              )}
+            <div className="scooter_list__frame">
+              <div className="scooter_list">
+                <Link className="link_AU" to="/shop/product_AU">
+                  <img className="product_AU_img" src={product_AU_img} alt="img" />
+                </Link>
+              </div>
+              <div className="scooter_list">
+                {this.state.scooterList.map(item =>
+                  this._renderScooterList(item)
+                )}
+              </div>
             </div>
             {/* <Link className="link_carborn" to="/shop/product_carborn">
               <img

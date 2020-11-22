@@ -2,7 +2,8 @@
 .product_carborn_img,
 .product_delta_img,
 .product_freego_img,
-.product_EZ_img {
+.product_EZ_img,
+.scooter_list__img {
   width: 200px;
   height: 200px;
   margin: 50px;

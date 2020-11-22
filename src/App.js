@@ -59,7 +59,6 @@ function App() {
       <Route path="/seller/change" component={Scooter_Change} />
       <Route path="/seller/delete" component={Scooter_Delete} />
       <Route path="/shop/product_test" component={Product_test} />
-
     </HashRouter>
   );
 }
